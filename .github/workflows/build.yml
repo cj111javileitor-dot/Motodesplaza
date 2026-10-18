@@ -9,12 +9,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.19.x'
           channel: 'stable'
+
       - run: flutter pub get
+
+      - name: Generar carpeta Android limpia
+        run: flutter create --platforms=android .
+
       - run: flutter build apk --release
+
       - uses: actions/upload-artifact@v4
         with:
           name: app-release
