@@ -28,9 +28,9 @@ jobs:
       - name: Crear plataforma Android
         run: flutter create . --platforms=android --overwrite
 
-      - run: flutter build apk --release
+      - run: flutter build apk --debug
 
       - uses: actions/upload-artifact@v4
         with:
-          name: app-release
-          path: Motodesplaza/build/app/outputs/flutter-apk/app-release.apk
+          name: app-debug
+          path: Motodesplaza/build/app/outputs/flutter-apk/app-debug.apk
