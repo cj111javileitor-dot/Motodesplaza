@@ -8,9 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: Motodesplaza
     steps:
       - uses: actions/checkout@v4
 
@@ -33,4 +30,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: app-debug
-          path: Motodesplaza/build/app/outputs/flutter-apk/app-debug.apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
