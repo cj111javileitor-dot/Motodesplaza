@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Motodesplaza
     steps:
       - uses: actions/checkout@v4
 
@@ -23,11 +26,11 @@ jobs:
       - run: flutter pub get
 
       - name: Crear plataforma Android
-        run: flutter create . --platforms=android
+        run: flutter create . --platforms=android --overwrite
 
       - run: flutter build apk --release
 
       - uses: actions/upload-artifact@v4
         with:
           name: app-release
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: Motodesplaza/build/app/outputs/flutter-apk/app-release.apk
