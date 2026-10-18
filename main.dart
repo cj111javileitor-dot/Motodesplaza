@@ -32,5 +32,5 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: app-release
+          name: app-debug
           path: Motodesplaza/build/app/outputs/flutter-apk/app-debug.apk
